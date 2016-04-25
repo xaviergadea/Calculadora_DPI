@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -35,11 +37,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Double W= Double.parseDouble(ET_ResolucionHorizontal.getText().toString());
                 Double pulgadas=Double.parseDouble(ET_Pulgadas.getText().toString());
                 Double diagonal= Math.sqrt(Math.pow(W, 2)+(Math.pow(H, 2)));
-                Double Resultat=diagonal/pulgadas;
+                Double Resultat=roundTwoDecimals(diagonal/pulgadas);
                 TV_DPI_Value.setText(Resultat.toString());
                 break;
 
 
         }
+    }
+    double roundTwoDecimals(double d)
+    {
+        DecimalFormat twoDForm = new DecimalFormat("#.##");
+        return Double.valueOf(twoDForm.format(d));
     }
 }

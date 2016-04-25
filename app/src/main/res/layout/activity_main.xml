@@ -14,8 +14,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/ET_ResolucionVertical"
         android:layout_marginTop="32dp"
+        android:inputType="numberDecimal"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/TV_RV"
+        android:layout_marginStart="76dp"
         android:textAlignment="center"/>
 
     <TextView
@@ -43,8 +45,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ET_ResolucionHorizontal"
+        android:inputType="numberDecimal"
         android:layout_alignBottom="@+id/TV_RH"
         android:layout_toEndOf="@+id/TV_RH"
+        android:layout_marginStart="76dp"
         android:textAlignment="center"/>
     <TextView
         android:layout_width="wrap_content"
@@ -63,6 +67,8 @@
         android:id="@+id/ET_Pulgadas"
         android:layout_alignBottom="@+id/TV_Pulgadas"
         android:layout_toEndOf="@+id/TV_Pulgadas"
+        android:inputType="numberDecimal"
+        android:layout_marginStart="20dp"
         android:textAlignment="center"/>
     <TextView
         android:layout_width="wrap_content"
