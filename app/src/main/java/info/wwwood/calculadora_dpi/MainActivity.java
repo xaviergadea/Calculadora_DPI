@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -30,15 +31,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EditText ET_Pulgadas = (EditText) findViewById(R.id.ET_Pulgadas);
         TextView TV_DPI_Value=(TextView) findViewById(R.id.TV_DPI_Value);
 
-
         switch (v.getId()){
             case R.id.BT_Calcular:
-                Double H= Double.parseDouble(ET_ResolucionVertical.getText().toString());
-                Double W= Double.parseDouble(ET_ResolucionHorizontal.getText().toString());
-                Double pulgadas=Double.parseDouble(ET_Pulgadas.getText().toString());
-                Double diagonal= Math.sqrt(Math.pow(W, 2)+(Math.pow(H, 2)));
-                Double Resultat=roundTwoDecimals(diagonal/pulgadas);
-                TV_DPI_Value.setText(Resultat.toString());
+                if( ET_ResolucionVertical.getText().toString().trim().equals("") || ET_ResolucionHorizontal.getText().toString().trim().equals("") || ET_Pulgadas.getText().toString().trim().equals("")) {
+                    Toast.makeText(this,"Has d'omplir tots els camps!",Toast.LENGTH_LONG).show();
+                } else {
+                    Double H = Double.parseDouble(ET_ResolucionVertical.getText().toString());
+                    Double W = Double.parseDouble(ET_ResolucionHorizontal.getText().toString());
+                    Double pulgadas = Double.parseDouble(ET_Pulgadas.getText().toString());
+                    Double diagonal = Math.sqrt(Math.pow(W, 2) + (Math.pow(H, 2)));
+                    Double Resultat = roundTwoDecimals(diagonal / pulgadas);
+                    TV_DPI_Value.setText(Resultat.toString());
+                }
                 break;
 
 
