@@ -1,6 +1,7 @@
 package info.wwwood.calculadora_dpi;
 
 import android.content.Context;
+import android.graphics.Camera;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         display=((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
-
+        
         if (display.getRotation()== Surface.ROTATION_0 || display.getRotation()== Surface.ROTATION_180){
             //MODO VERTICAL
             modoVertical();
